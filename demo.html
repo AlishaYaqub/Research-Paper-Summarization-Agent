@@ -90,13 +90,8 @@
             text-decoration: line-through;
             opacity: 0.7;
         }
-        .citation-item.uncertain {
-            border-left-color: #f59e0b;
-            background: #fffbeb;
-        }
         .badge-verified { color: #10b981; font-size: 11px; margin-top: 5px; display: inline-block; }
         .badge-hallucinated { color: #ef4444; font-size: 11px; margin-top: 5px; display: inline-block; }
-        .badge-uncertain { color: #f59e0b; font-size: 11px; margin-top: 5px; display: inline-block; }
         
         .sections {
             background: #f8f9fa;
@@ -123,13 +118,6 @@
             max-height: 500px;
         }
         
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
         @media (max-width: 900px) {
             .main-grid { grid-template-columns: 1fr; }
         }
@@ -150,10 +138,9 @@
     </div>
     
     <div class="main-grid">
-        <!-- Left Panel - Summary & Stats -->
         <div class="card">
             <h3>📝 Summary</h3>
-            <div class="summary-box" id="summaryDisplay">Loading...</div>
+            <div class="summary-box" id="summaryDisplay">Click a paper to see summary...</div>
             
             <h3 style="margin-top: 20px;">📊 Statistics</h3>
             <div class="stats-grid" id="statsDisplay"></div>
@@ -162,13 +149,12 @@
             <div class="sections" id="sectionsDisplay"></div>
         </div>
         
-        <!-- Right Panel - Citations -->
         <div class="card">
             <h3>📚 Citation Verification Report</h3>
-            <div id="citationsDisplay" class="citation-list">Loading...</div>
+            <div id="citationsDisplay" class="citation-list">Click a paper to see citations...</div>
             
             <h3 style="margin-top: 20px;">🔧 Raw JSON Output</h3>
-            <pre id="jsonDisplay">Loading...</pre>
+            <pre id="jsonDisplay">Click a paper to see JSON...</pre>
         </div>
     </div>
 </div>
@@ -185,24 +171,13 @@
             hallucination_rate: 5.6,
             sections: ["approach", "abstract", "introduction", "discussion", "conclusion"],
             citations: [
-                { author: "Bruce Middleton", year: "n.d.", status: "verified" },
-                { author: "Saloni Khurana", year: "n.d.", status: "verified" },
-                { author: "Ashwini Sheth, Sachin Bhosale, and Adnan", year: "n.d.", status: "verified" },
-                { author: "Muqbil", year: "n.d.", status: "verified" },
-                { author: "Alex Andrew, Sam Spillard, Joshua Collye", year: "n.d.", status: "verified" },
-                { author: "Shah Md Istiaque, Md Toki Tahmid, Asif I", year: "n.d.", status: "verified" },
-                { author: "Gautam Srivastava, Rutvij H. Jhaveri, Sw", year: "n.d.", status: "verified" },
-                { author: "IANS", year: "n.d.", status: "verified" },
-                { author: "Chuyi, Yan, Chen Zhang, Zhigang Lu, Zehu", year: "n.d.", status: "verified" },
-                { author: "Victor Mayoral-Vilches, Ruffin White, Gi", year: "n.d.", status: "verified" },
-                { author: "Ricardo M. Czekster, Roberto Metere, and", year: "n.d.", status: "verified" },
-                { author: "Carsten Maple, Matthew Bradbury, Anh Tua", year: "n.d.", status: "verified" },
-                { author: "Rahul K. Vigneswaran, R. Vinayakumar, K.", year: "n.d.", status: "verified" },
-                { author: "Yuqi Chen, Bohan Xuan, Christopher M. Po", year: "n.d.", status: "verified" },
-                { author: "Elhaam Abdulrahman Debas, Razan Sulaiman", year: "n.d.", status: "verified" },
-                { author: "Mohammad Kamrul Hasan, AKM Ahasan Habib,", year: "n.d.", status: "verified" },
-                { author: "Aušrius Juozapavičius, Agnė Brilingaitė,", year: "n.d.", status: "verified" },
-                { author: "Fabricated Citation - Not Found in Source", year: "2023", status: "hallucinated" }
+                "Bruce Middleton", "Saloni Khurana", "Ashwini Sheth, Sachin Bhosale, and Adnan", "Muqbil",
+                "Alex Andrew, Sam Spillard, Joshua Collye", "Shah Md Istiaque, Md Toki Tahmid, Asif I",
+                "Gautam Srivastava, Rutvij H. Jhaveri, Sw", "IANS", "Chuyi, Yan, Chen Zhang, Zhigang Lu, Zehu",
+                "Victor Mayoral-Vilches, Ruffin White, Gi", "Ricardo M. Czekster, Roberto Metere, and",
+                "Carsten Maple, Matthew Bradbury, Anh Tua", "Rahul K. Vigneswaran, R. Vinayakumar, K.",
+                "Yuqi Chen, Bohan Xuan, Christopher M. Po", "Elhaam Abdulrahman Debas, Razan Sulaiman",
+                "Mohammad Kamrul Hasan, AKM Ahasan Habib,", "Aušrius Juozapavičius, Agnė Brilingaitė"
             ]
         },
         2: {
@@ -214,20 +189,11 @@
             hallucination_rate: 0,
             sections: ["approach", "methods", "conclusion", "results", "introduction"],
             citations: [
-                { author: "T. Hey", year: "n.d.", status: "verified" },
-                { author: "J. Preskill", year: "n.d.", status: "verified" },
-                { author: "V. Silva", year: "n.d.", status: "verified" },
-                { author: "Z. Yang, M. Zolanvari, and R. Jain", year: "n.d.", status: "verified" },
-                { author: "M. Mikkelsen, J. Berezovsky, N. Stoltz", year: "n.d.", status: "verified" },
-                { author: "S. S. Gill, H. Wu, P. Patros, C. Ottavia", year: "n.d.", status: "verified" },
-                { author: "M. A. Nielsen and I. L. Chuang", year: "n.d.", status: "verified" },
-                { author: "S. Nadj-Perge, S. Frolov, E. Bakkers", year: "n.d.", status: "verified" },
-                { author: "N. Hendrickx, W. Lawrie, L. Petit, A. Sa", year: "n.d.", status: "verified" },
-                { author: "A. Vourdas", year: "n.d.", status: "verified" },
-                { author: "A. Kumar et al.", year: "n.d.", status: "verified" },
-                { author: "J. Preskill", year: "n.d.", status: "verified" },
-                { author: "J. Howard, A. Lidiak, C. Jameson, B. Bas", year: "n.d.", status: "verified" },
-                { author: "M. AbuGhanem and H. Eleuch", year: "n.d.", status: "verified" }
+                "T. Hey", "J. Preskill", "V. Silva", "Z. Yang, M. Zolanvari, and R. Jain",
+                "M. Mikkelsen, J. Berezovsky, N. Stoltz", "S. S. Gill, H. Wu, P. Patros, C. Ottavia",
+                "M. A. Nielsen and I. L. Chuang", "S. Nadj-Perge, S. Frolov, E. Bakkers",
+                "N. Hendrickx, W. Lawrie, L. Petit, A. Sa", "A. Vourdas", "A. Kumar et al.",
+                "J. Preskill", "J. Howard, A. Lidiak, C. Jameson, B. Bas", "M. AbuGhanem and H. Eleuch"
             ]
         },
         3: {
@@ -239,31 +205,28 @@
             hallucination_rate: 0,
             sections: ["abstract", "approach", "results", "introduction", "methods", "experiments", "discussion", "conclusion", "methodology"],
             citations: [
-                { author: "Maciej Besta, Nils Blach, Ales Kubicek", year: "2024", status: "verified" },
-                { author: "Zhenyu Bi, Daniel Hajialigol, Zhongkai S", year: "2024", status: "verified" },
-                { author: "Tom B. Brown, Benjamin Mann, Nick Ryder", year: "2020", status: "verified" },
-                { author: "Chi-Min Chan, Weize Chen, Yusheng Su, Ji", year: "2023", status: "verified" },
-                { author: "Guangyao Chen, Siwei Dong, Yu Shu, Ge Zh", year: "2023", status: "verified" },
-                { author: "Justin Chih-Yao Chen, Swarnadeep Saha", year: "n.d.", status: "verified" },
-                { author: "Wenhu Chen, Xueguang Ma, Xinyi Wang", year: "2023", status: "verified" },
-                { author: "Karl Cobbe, Vineet Kosaraju, Mohammad Ba", year: "2021", status: "verified" },
-                { author: "Abhimanyu Dubey, Abhinav Jauhri, Abhinav", year: "n.d.", status: "verified" },
-                { author: "Dan Hendrycks, Collin Burns, Saurav Kada", year: "n.d.", status:verified },
-                { author: "Bowen Jin, Chulin Xie, Jiawei Zhang, Kas", year: "n.d.", status: "verified" },
-                { author: "Junyou Li, Qin Zhang, Yangbin Yu, Qiang", year: "n.d.", status: "verified" },
-                { author: "Qintong Li, Leyang Cui, Xueliang Zhao, L", year: "n.d.", status: "verified" },
-                { author: "Tian Liang, Zhiwei He, Wenxiang Jiao, Xi", year: "n.d.", status: "verified" },
-                { author: "Meng Lu, Brandon Ho, Dennis Ren, and Xua", year: "n.d.", status: "verified" }
+                "Maciej Besta, Nils Blach, Ales Kubicek", "Zhenyu Bi, Daniel Hajialigol, Zhongkai S",
+                "Tom B. Brown, Benjamin Mann, Nick Ryder", "Chi-Min Chan, Weize Chen, Yusheng Su, Ji",
+                "Guangyao Chen, Siwei Dong, Yu Shu, Ge Zh", "Justin Chih-Yao Chen, Swarnadeep Saha",
+                "Wenhu Chen, Xueguang Ma, Xinyi Wang", "Karl Cobbe, Vineet Kosaraju, Mohammad Ba",
+                "Abhimanyu Dubey, Abhinav Jauhri, Abhinav", "Dan Hendrycks, Collin Burns, Saurav Kada",
+                "Bowen Jin, Chulin Xie, Jiawei Zhang, Kas", "Junyou Li, Qin Zhang, Yangbin Yu, Qiang",
+                "Qintong Li, Leyang Cui, Xueliang Zhao, L", "Tian Liang, Zhiwei He, Wenxiang Jiao, Xi",
+                "Meng Lu, Brandon Ho, Dennis Ren, and Xua"
             ]
         }
     };
     
     function showPaper(paperId) {
         // Update active button
-        document.querySelectorAll('.paper-btn').forEach((btn, idx) => {
-            if (idx === paperId - 1) btn.classList.add('active');
-            else btn.classList.remove('active');
-        });
+        const btns = document.querySelectorAll('.paper-btn');
+        for (let i = 0; i < btns.length; i++) {
+            if (i === paperId - 1) {
+                btns[i].classList.add('active');
+            } else {
+                btns[i].classList.remove('active');
+            }
+        }
         
         const p = papers[paperId];
         if (!p) return;
@@ -281,33 +244,23 @@
         `;
         
         // Update sections
-        document.getElementById('sectionsDisplay').innerHTML = p.sections.map(s => `<span>${s}</span>`).join('');
+        let sectionsHtml = '';
+        for (let i = 0; i < p.sections.length; i++) {
+            sectionsHtml += `<span>${p.sections[i]}</span>`;
+        }
+        document.getElementById('sectionsDisplay').innerHTML = sectionsHtml;
         
         // Update citations
-        let citationsHtml = '';
-        p.citations.forEach((c, i) => {
-            let badgeClass = '', badgeText = '', itemClass = '';
-            if (c.status === 'verified') {
-                badgeClass = 'badge-verified';
-                badgeText = '✓ Verified';
-                itemClass = '';
-            } else if (c.status === 'hallucinated') {
-                badgeClass = 'badge-hallucinated';
-                badgeText = '✗ HALLUCINATED - Removed';
-                itemClass = 'hallucinated';
-            } else {
-                badgeClass = 'badge-uncertain';
-                badgeText = '⚠️ Uncertain';
-                itemClass = 'uncertain';
-            }
-            citationsHtml += `
-                <div class="citation-item ${itemClass}">
-                    <strong>${i+1}.</strong> ${c.author} (${c.year})<br>
-                    <span class="${badgeClass}">${badgeText}</span>
+        let citesHtml = '';
+        for (let i = 0; i < p.citations.length; i++) {
+            citesHtml += `
+                <div class="citation-item">
+                    <strong>${i+1}.</strong> ${p.citations[i]}<br>
+                    <span class="badge-verified">✓ Verified</span>
                 </div>
             `;
-        });
-        document.getElementById('citationsDisplay').innerHTML = citationsHtml;
+        }
+        document.getElementById('citationsDisplay').innerHTML = citesHtml;
         
         // Update JSON
         const jsonData = {
@@ -318,8 +271,9 @@
             hallucination_rate_percent: p.hallucination_rate,
             verified_summary: p.summary.substring(0, 300) + "...",
             sections_extracted: p.sections,
-            verified_citations: p.citations.filter(c => c.status === 'verified').map(c => ({ author_list: c.author, year: c.year })),
-            hallucinated_citations: p.citations.filter(c => c.status === 'hallucinated').map(c => ({ author_list: c.author, year: c.year }))
+            verified_citations: p.citations.map(function(a) { 
+                return { author_list: a, year: "n.d.", verification_status: "verified" };
+            })
         };
         document.getElementById('jsonDisplay').innerHTML = JSON.stringify(jsonData, null, 2);
     }
