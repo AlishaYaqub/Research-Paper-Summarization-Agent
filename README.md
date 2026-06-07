@@ -52,33 +52,29 @@ Verified Output (JSON file + terminal summary)
 
 ## Project File Structure
 
-```
-## Project File Structure
 
 ```
 research_summarizer/
-├── __pycache__/                 Auto-generated Python cache (ignore)
+├── __pycache__/                 # Auto-generated Python cache (ignore)
 ├── prompts/
-│   ├── abstract_prompt.txt      Prompt template for abstract section
-│   ├── citation_prompt.txt      Prompt template for citation extraction
-│   ├── conclusion_prompt.txt    Prompt template for conclusion section
-│   ├── introduction_prompt.txt  Prompt template for introduction section
-│   ├── methods_prompt.txt       Prompt template for methods section
-│   ├── results_prompt.txt       Prompt template for results section
-│   └── synthesis_prompt.txt     Prompt template for full summary generation
-├── agent1_extraction.py         Agent 1: PDF parsing and section extraction
-├── agent2_synthesis.py          Agent 2: Summary generation and citation extraction
-├── agent3_verification.py       Agent 3: Citation verification and hallucination removal
-├── app.py                       Optional web UI built with Flask
-├── baselineTest.py              Baseline single-prompt comparison script
-├── demo.html                    Demo HTML file
-├── main.py                      Entry point — run this file
-├── utils.py                     Shared utilities for PDF parsing and JSON handling
-├── requirements.txt             Required Python libraries
-└── README.md                    Project documentation
+│   ├── abstract_prompt.txt      # Prompt template for abstract section
+│   ├── citation_prompt.txt      # Prompt template for citation extraction
+│   ├── conclusion_prompt.txt    # Prompt template for conclusion section
+│   ├── introduction_prompt.txt  # Prompt template for introduction section
+│   ├── methods_prompt.txt       # Prompt template for methods section
+│   ├── results_prompt.txt       # Prompt template for results section
+│   └── synthesis_prompt.txt     # Prompt template for full summary generation
+├── agent1_extraction.py         # Agent 1: PDF parsing and section extraction
+├── agent2_synthesis.py          # Agent 2: Summary generation and citation extraction
+├── agent3_verification.py       # Agent 3: Citation verification and hallucination removal
+├── app.py                       # Optional web UI built with Flask
+├── baselineTest.py              # Baseline single-prompt comparison script
+├── demo.html                    # Demo HTML file
+├── main.py                      # Entry point — run this file
+├── utils.py                     # Shared utilities for PDF parsing and JSON handling
+├── requirements.txt             # Required Python libraries
+└── README.md                    # Project documentation
 ```
-
----
 
 ## Setup Instructions
 
