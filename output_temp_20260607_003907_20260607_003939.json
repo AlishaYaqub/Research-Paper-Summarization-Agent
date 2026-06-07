@@ -1,0 +1,177 @@
+{
+  "input_pdf": "temp_20260607_003907.pdf",
+  "timestamp": "20260607_003939",
+  "pipeline_output": {
+    "verified_summary": "This research addresses the pressing issue of safeguarding conventional cryptography in the face of emerging quantum computing threats. A post-quantum cryptography system is proposed as a solution, aiming to mitigate the challenges posed by quantum error correction and control overhead. The approach leverages the potential of hybrid computing and quantum computing, acknowledging both the benefits and challenges associated with these technologies. Although the methodology lacks specific details, it touches on the principles of quantum mechanics and software methods. Unfortunately, the experimental setup and datasets used are not explicitly stated, and the results section does not provide any quantitative findings. Despite these limitations, the research highlights the need for a unified quantum computing approach that combines performance features. The study concludes by identifying unanswered questions and potential directions for future research, emphasizing the importance of continued investigation into post-quantum cryptography systems. Ultimately, this research contributes to the ongoing effort to develop secure cryptographic systems in a post-quantum world.",
+    "verified_citations": [
+      {
+        "citation": {
+          "author_list": "T. Hey",
+          "year": "1999",
+          "title": "Richard Feynman and computation",
+          "venue": "Contemporary Physics",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "J. Preskill",
+          "year": "2023",
+          "title": "Quantum computing 40 years later",
+          "venue": "Feynman Lectures on Computation, CRC Press",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "V. Silva",
+          "year": "2023",
+          "title": "Richard Feynman, demigod of physics, father of the quantum computer",
+          "venue": "Quantum Computing by Practice: Python Programming in the Cloud with Qiskit and IBM-Q, Springer",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Z. Yang, M. Zolanvari, and R. Jain",
+          "year": "2023",
+          "title": "A survey of important issues in quantum computing and communications",
+          "venue": "IEEE Communications Surveys & Tutorials",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "M. Mikkelsen, J. Berezovsky, N. Stoltz, L. Coldren, and D. Awschalom",
+          "year": "2007",
+          "title": "Optically detected coherent spin dynamics of a single electron in a quantum dot",
+          "venue": "Nature Physics",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "S. S. Gill, H. Wu, P. Patros, C. Ottaviani, P. Arora, V. C. Pujol, D. Haunschild, A. K. Parlikad, O. Cetinkaya, H. Lutfiyya, et al.",
+          "year": "2024",
+          "title": "Modern computing: Vision and challenges",
+          "venue": "Telematics and Informatics Reports",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "M. A. Nielsen and I. L. Chuang",
+          "year": "2010",
+          "title": "Quantum computation and quantum information",
+          "venue": "Cambridge university press",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "S. Nadj-Perge, S. Frolov, E. Bakkers, and L. P. Kouwenhoven",
+          "year": "2010",
+          "title": "Spin–orbit qubit in a semiconductor nanowire",
+          "venue": "Nature",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "N. Hendrickx, W. Lawrie, L. Petit, A. Sammak, G. Scappucci, and M. Veldhorst",
+          "year": "2020",
+          "title": "A single-hole spin qubit",
+          "venue": "Nature communications",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "A. Vourdas",
+          "year": "2004",
+          "title": "Quantum systems with finite Hilbert space",
+          "venue": "Reports on Progress in Physics",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "A. Kumar et al.",
+          "year": "2022",
+          "title": "Securing the future internet of things with post-quantum cryptography",
+          "venue": "Security and Privacy",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "J. Preskill",
+          "year": "2018",
+          "title": "Quantum computing in the nisq era and beyond",
+          "venue": "Quantum",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "J. Howard, A. Lidiak, C. Jameson, B. Basyildiz, K. Clark, T. Zhao, M. Bal, J. Long, D. P. Pappas, M. Singh, et al.",
+          "year": "2023",
+          "title": "Implementing two-qubit gates at the quantum speed limit",
+          "venue": "Physical Review Research",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "M. AbuGhanem and H. Eleuch",
+          "year": null,
+          "title": "Two-qubit entangling gates for superconducting quantum computers",
+          "venue": null,
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      }
+    ],
+    "uncertain_citations": [],
+    "hallucinated_citations": [],
+    "hallucination_rate_percent": 0.0,
+    "total_citations_generated": 14,
+    "total_verified": 14,
+    "total_hallucinated": 0,
+    "total_uncertain": 0
+  },
+  "sections_extracted": [
+    "approach",
+    "methods",
+    "conclusion",
+    "results",
+    "introduction"
+  ]
+}

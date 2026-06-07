@@ -1,0 +1,12 @@
+You are a precise academic summarizer. The following text is the Methods/Methodology section of a research paper.
+Extract and summarize the following in JSON format:
+- dataset: What dataset or data source is used? (1-2 sentences, or "Not specified")
+- model_or_algorithm: What model, algorithm, or system is described? (1-2 sentences)
+- evaluation_metrics: What metrics are used for evaluation? (list or "Not specified")
+- section_summary: A flowing paragraph summary of this section (max 120 words)
+
+TEXT:
+{text}
+
+Output ONLY valid JSON. Do not add any text before or after the JSON.
+Do not infer or hallucinate details not present in the text.

@@ -1,0 +1,17 @@
+You are a citation extraction assistant. The following is the raw text of the References section of a research paper.
+Extract each reference entry and output it as a JSON array of objects.
+Each object must have these fields:
+- author_list: string of author names as written
+- year: publication year as string (or null if not found)
+- title: title of the paper/book (or null if not found)
+- venue: journal, conference, or publisher name (or null if not found)
+- doi: DOI string if present (or null)
+
+Extract ONLY what is explicitly stated in the text.
+Do NOT infer, complete, or fabricate any field.
+If a field is not present in the text, set its value to null.
+
+REFERENCES TEXT:
+{references}
+
+Output ONLY a valid JSON array. No text before or after.

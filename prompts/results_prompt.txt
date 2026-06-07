@@ -1,0 +1,12 @@
+You are a precise academic summarizer. The following text is the Results/Experiments section of a research paper.
+Extract and summarize the following in JSON format:
+- quantitative_results: Key numerical results (list the most important numbers/scores)
+- comparison: How does this method compare to baselines? (1-2 sentences, or "Not specified")
+- key_observation: Most important finding from experiments (1-2 sentences)
+- section_summary: A flowing paragraph summary of this section (max 120 words)
+
+TEXT:
+{text}
+
+Output ONLY valid JSON. Do not add any text before or after the JSON.
+Do not infer or hallucinate details not present in the text.

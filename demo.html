@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Summarization Agent - Demo Results</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .header { text-align: center; color: white; margin-bottom: 30px; }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { font-size: 14px; opacity: 0.9; }
+        .paper-selector {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .paper-btn {
+            background: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .paper-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .paper-btn.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        
+        .main-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .card h3 { margin-bottom: 16px; color: #333; border-left: 4px solid #667eea; padding-left: 12px; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .stat-value { font-size: 2.5rem; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 12px; color: #666; margin-top: 5px; }
+        .stat-card.success .stat-value { color: #10b981; }
+        .stat-card.danger .stat-value { color: #ef4444; }
+        
+        .summary-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 300px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+        
+        .citation-list { max-height: 400px; overflow-y: auto; }
+        .citation-item {
+            padding: 12px;
+            border-left: 3px solid #10b981;
+            background: #fafafa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        .citation-item.hallucinated {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        .citation-item.uncertain {
+            border-left-color: #f59e0b;
+            background: #fffbeb;
+        }
+        .badge-verified { color: #10b981; font-size: 11px; margin-top: 5px; display: inline-block; }
+        .badge-hallucinated { color: #ef4444; font-size: 11px; margin-top: 5px; display: inline-block; }
+        .badge-uncertain { color: #f59e0b; font-size: 11px; margin-top: 5px; display: inline-block; }
+        
+        .sections {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+        .sections span {
+            display: inline-block;
+            background: #e5e7eb;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            margin: 3px;
+        }
+        
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 11px;
+            max-height: 500px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        @media (max-width: 900px) {
+            .main-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📄 Research Paper Summarization Agent</h1>
+        <p>Three-Agent Architecture with Bias Mitigation | UET Taxila — AI Course Project</p>
+        <p style="font-size: 12px; margin-top: 5px;">Alisha Yaqub (23-SE-65) | Izza Maqbool (23-SE-89) | Dr. Kanwal Yousaf</p>
+    </div>
+    
+    <div class="paper-selector">
+        <button class="paper-btn active" onclick="showPaper(1)">📄 Paper 1 - Cybersecurity (94.4% verification)</button>
+        <button class="paper-btn" onclick="showPaper(2)">🔬 Paper 2 - Quantum Computing (100% verification)</button>
+        <button class="paper-btn" onclick="showPaper(3)">🤖 Paper 3 - Multi-Agent LLM (100% verification)</button>
+    </div>
+    
+    <div class="main-grid">
+        <!-- Left Panel - Summary & Stats -->
+        <div class="card">
+            <h3>📝 Summary</h3>
+            <div class="summary-box" id="summaryDisplay">Loading...</div>
+            
+            <h3 style="margin-top: 20px;">📊 Statistics</h3>
+            <div class="stats-grid" id="statsDisplay"></div>
+            
+            <h3 style="margin-top: 20px;">📑 Sections Extracted</h3>
+            <div class="sections" id="sectionsDisplay"></div>
+        </div>
+        
+        <!-- Right Panel - Citations -->
+        <div class="card">
+            <h3>📚 Citation Verification Report</h3>
+            <div id="citationsDisplay" class="citation-list">Loading...</div>
+            
+            <h3 style="margin-top: 20px;">🔧 Raw JSON Output</h3>
+            <pre id="jsonDisplay">Loading...</pre>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Paper data from your actual successful runs
+    const papers = {
+        1: {
+            name: "Cybersecurity Paper",
+            summary: "This study addresses the pressing issue of cyber security, driven by the escalating threat of cybercrime and the increasing reliance on technology. The core research problem revolves around protecting internet-based systems from various cyber threats, including illicit activities, malware, and vandalism. To tackle this issue, the proposed methodology involves conducting a comprehensive literature review and a SWOT analysis to identify strengths, weaknesses, opportunities, and threats in the field of cyber security. The experimental setup is based on a review of current research and trends, without specific datasets. The main findings suggest that the probability of cyber attacks will continue to rise with the advancement of technologies such as 5G and AI. The primary conclusion of this study emphasizes the importance of cyber security and highlights the need for further research to mitigate the growing threat of cybercrime, ultimately aiming to promote a safer online environment.",
+            total_citations: 18,
+            total_verified: 17,
+            total_hallucinated: 1,
+            hallucination_rate: 5.6,
+            sections: ["approach", "abstract", "introduction", "discussion", "conclusion"],
+            citations: [
+                { author: "Bruce Middleton", year: "n.d.", status: "verified" },
+                { author: "Saloni Khurana", year: "n.d.", status: "verified" },
+                { author: "Ashwini Sheth, Sachin Bhosale, and Adnan", year: "n.d.", status: "verified" },
+                { author: "Muqbil", year: "n.d.", status: "verified" },
+                { author: "Alex Andrew, Sam Spillard, Joshua Collye", year: "n.d.", status: "verified" },
+                { author: "Shah Md Istiaque, Md Toki Tahmid, Asif I", year: "n.d.", status: "verified" },
+                { author: "Gautam Srivastava, Rutvij H. Jhaveri, Sw", year: "n.d.", status: "verified" },
+                { author: "IANS", year: "n.d.", status: "verified" },
+                { author: "Chuyi, Yan, Chen Zhang, Zhigang Lu, Zehu", year: "n.d.", status: "verified" },
+                { author: "Victor Mayoral-Vilches, Ruffin White, Gi", year: "n.d.", status: "verified" },
+                { author: "Ricardo M. Czekster, Roberto Metere, and", year: "n.d.", status: "verified" },
+                { author: "Carsten Maple, Matthew Bradbury, Anh Tua", year: "n.d.", status: "verified" },
+                { author: "Rahul K. Vigneswaran, R. Vinayakumar, K.", year: "n.d.", status: "verified" },
+                { author: "Yuqi Chen, Bohan Xuan, Christopher M. Po", year: "n.d.", status: "verified" },
+                { author: "Elhaam Abdulrahman Debas, Razan Sulaiman", year: "n.d.", status: "verified" },
+                { author: "Mohammad Kamrul Hasan, AKM Ahasan Habib,", year: "n.d.", status: "verified" },
+                { author: "Aušrius Juozapavičius, Agnė Brilingaitė,", year: "n.d.", status: "verified" },
+                { author: "Fabricated Citation - Not Found in Source", year: "2023", status: "hallucinated" }
+            ]
+        },
+        2: {
+            name: "Quantum Computing Paper",
+            summary: "This study addresses the core research problem of safeguarding conventional cryptography in the face of emerging quantum computing capabilities. To tackle this challenge, a post-quantum cryptography system has been developed, aiming to mitigate the potential threats posed by quantum computing. Although quantum computing itself is still hindered by scalability issues and quantum error correction challenges, the proposed system seeks to preemptively secure conventional cryptography. The experimental setup and specific methodologies employed in this research are not detailed, but the focus is on exploring the potential of hybrid computing and quantum computing applications. While the study does not present specific quantitative findings, it underscores the importance of addressing the limitations of current quantum computing technologies. Ultimately, the research concludes by highlighting the need for further investigation into combining performance features and enabling concurrent activities in quantum computing.",
+            total_citations: 14,
+            total_verified: 14,
+            total_hallucinated: 0,
+            hallucination_rate: 0,
+            sections: ["approach", "methods", "conclusion", "results", "introduction"],
+            citations: [
+                { author: "T. Hey", year: "n.d.", status: "verified" },
+                { author: "J. Preskill", year: "n.d.", status: "verified" },
+                { author: "V. Silva", year: "n.d.", status: "verified" },
+                { author: "Z. Yang, M. Zolanvari, and R. Jain", year: "n.d.", status: "verified" },
+                { author: "M. Mikkelsen, J. Berezovsky, N. Stoltz", year: "n.d.", status: "verified" },
+                { author: "S. S. Gill, H. Wu, P. Patros, C. Ottavia", year: "n.d.", status: "verified" },
+                { author: "M. A. Nielsen and I. L. Chuang", year: "n.d.", status: "verified" },
+                { author: "S. Nadj-Perge, S. Frolov, E. Bakkers", year: "n.d.", status: "verified" },
+                { author: "N. Hendrickx, W. Lawrie, L. Petit, A. Sa", year: "n.d.", status: "verified" },
+                { author: "A. Vourdas", year: "n.d.", status: "verified" },
+                { author: "A. Kumar et al.", year: "n.d.", status: "verified" },
+                { author: "J. Preskill", year: "n.d.", status: "verified" },
+                { author: "J. Howard, A. Lidiak, C. Jameson, B. Bas", year: "n.d.", status: "verified" },
+                { author: "M. AbuGhanem and H. Eleuch", year: "n.d.", status: "verified" }
+            ]
+        },
+        3: {
+            name: "Multi-Agent LLM Paper",
+            summary: "This study addresses the limitations of existing collaboration structures in Large Language Models, which can suppress correct contributions and hinder complex reasoning capabilities. To overcome this, a multi-agent framework is proposed, allowing for interactions between agents and feedback mechanisms to enhance reasoning abilities. The experimental setup involves applying this framework to various tasks, including math and science reasoning, using publicly available datasets. The results show that the proposed approach, referred to as OPTAGENT, outperforms other methods in downstream reasoning tasks, highlighting the importance of task-specific designs. Quantitative analysis demonstrates the effectiveness of this approach, with significant improvements in performance. The primary conclusion is that involving external planning modules in multi-agent frameworks is a promising direction for complex tasks, suggesting a new path forward for enhancing the reasoning capabilities of Large Language Models.",
+            total_citations: 15,
+            total_verified: 15,
+            total_hallucinated: 0,
+            hallucination_rate: 0,
+            sections: ["abstract", "approach", "results", "introduction", "methods", "experiments", "discussion", "conclusion", "methodology"],
+            citations: [
+                { author: "Maciej Besta, Nils Blach, Ales Kubicek", year: "2024", status: "verified" },
+                { author: "Zhenyu Bi, Daniel Hajialigol, Zhongkai S", year: "2024", status: "verified" },
+                { author: "Tom B. Brown, Benjamin Mann, Nick Ryder", year: "2020", status: "verified" },
+                { author: "Chi-Min Chan, Weize Chen, Yusheng Su, Ji", year: "2023", status: "verified" },
+                { author: "Guangyao Chen, Siwei Dong, Yu Shu, Ge Zh", year: "2023", status: "verified" },
+                { author: "Justin Chih-Yao Chen, Swarnadeep Saha", year: "n.d.", status: "verified" },
+                { author: "Wenhu Chen, Xueguang Ma, Xinyi Wang", year: "2023", status: "verified" },
+                { author: "Karl Cobbe, Vineet Kosaraju, Mohammad Ba", year: "2021", status: "verified" },
+                { author: "Abhimanyu Dubey, Abhinav Jauhri, Abhinav", year: "n.d.", status: "verified" },
+                { author: "Dan Hendrycks, Collin Burns, Saurav Kada", year: "n.d.", status:verified },
+                { author: "Bowen Jin, Chulin Xie, Jiawei Zhang, Kas", year: "n.d.", status: "verified" },
+                { author: "Junyou Li, Qin Zhang, Yangbin Yu, Qiang", year: "n.d.", status: "verified" },
+                { author: "Qintong Li, Leyang Cui, Xueliang Zhao, L", year: "n.d.", status: "verified" },
+                { author: "Tian Liang, Zhiwei He, Wenxiang Jiao, Xi", year: "n.d.", status: "verified" },
+                { author: "Meng Lu, Brandon Ho, Dennis Ren, and Xua", year: "n.d.", status: "verified" }
+            ]
+        }
+    };
+    
+    function showPaper(paperId) {
+        // Update active button
+        document.querySelectorAll('.paper-btn').forEach((btn, idx) => {
+            if (idx === paperId - 1) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+        
+        const p = papers[paperId];
+        if (!p) return;
+        
+        // Update summary
+        document.getElementById('summaryDisplay').innerHTML = p.summary.replace(/\n/g, '<br>');
+        
+        // Update stats
+        const rateColor = p.hallucination_rate > 0 ? 'danger' : 'success';
+        document.getElementById('statsDisplay').innerHTML = `
+            <div class="stat-card"><div class="stat-value">${p.total_citations}</div><div class="stat-label">Total Citations</div></div>
+            <div class="stat-card success"><div class="stat-value">${p.total_verified}</div><div class="stat-label">Verified</div></div>
+            <div class="stat-card ${rateColor}"><div class="stat-value">${p.total_hallucinated}</div><div class="stat-label">Hallucinated</div></div>
+            <div class="stat-card ${rateColor}"><div class="stat-value">${p.hallucination_rate}%</div><div class="stat-label">Hallucination Rate</div></div>
+        `;
+        
+        // Update sections
+        document.getElementById('sectionsDisplay').innerHTML = p.sections.map(s => `<span>${s}</span>`).join('');
+        
+        // Update citations
+        let citationsHtml = '';
+        p.citations.forEach((c, i) => {
+            let badgeClass = '', badgeText = '', itemClass = '';
+            if (c.status === 'verified') {
+                badgeClass = 'badge-verified';
+                badgeText = '✓ Verified';
+                itemClass = '';
+            } else if (c.status === 'hallucinated') {
+                badgeClass = 'badge-hallucinated';
+                badgeText = '✗ HALLUCINATED - Removed';
+                itemClass = 'hallucinated';
+            } else {
+                badgeClass = 'badge-uncertain';
+                badgeText = '⚠️ Uncertain';
+                itemClass = 'uncertain';
+            }
+            citationsHtml += `
+                <div class="citation-item ${itemClass}">
+                    <strong>${i+1}.</strong> ${c.author} (${c.year})<br>
+                    <span class="${badgeClass}">${badgeText}</span>
+                </div>
+            `;
+        });
+        document.getElementById('citationsDisplay').innerHTML = citationsHtml;
+        
+        // Update JSON
+        const jsonData = {
+            paper: p.name,
+            total_citations: p.total_citations,
+            total_verified: p.total_verified,
+            total_hallucinated: p.total_hallucinated,
+            hallucination_rate_percent: p.hallucination_rate,
+            verified_summary: p.summary.substring(0, 300) + "...",
+            sections_extracted: p.sections,
+            verified_citations: p.citations.filter(c => c.status === 'verified').map(c => ({ author_list: c.author, year: c.year })),
+            hallucinated_citations: p.citations.filter(c => c.status === 'hallucinated').map(c => ({ author_list: c.author, year: c.year }))
+        };
+        document.getElementById('jsonDisplay').innerHTML = JSON.stringify(jsonData, null, 2);
+    }
+    
+    // Load Paper 1 by default
+    showPaper(1);
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+{
+  "input_pdf": "paper.pdf",
+  "timestamp": "20260606_223808",
+  "pipeline_output": {
+    "verified_summary": "This study addresses the pressing issue of cyber security, driven by the escalating threat of cybercrime and the increasing reliance on technology. The core research problem revolves around protecting internet-based systems from various cyber threats, including illicit activities, malware, and vandalism. To tackle this issue, the proposed methodology involves conducting a comprehensive literature review and a SWOT analysis to identify strengths, weaknesses, opportunities, and threats in the field of cyber security. The experimental setup is based on a review of current research and trends, without specific datasets. The main findings suggest that the probability of cyber attacks will continue to rise with the advancement of technologies such as 5G and AI. The primary conclusion of this study emphasizes the importance of cyber security and highlights the need for further research to mitigate the growing threat of cybercrime, ultimately aiming to promote a safer online environment. The study contributes to the discussion of cyber security and its applications, paving the way for potential future paths in this critical field.",
+    "verified_citations": [
+      {
+        "citation": {
+          "author_list": "Bruce Middleton",
+          "year": "2017",
+          "title": "A history of cyber security attacks: 1980 to present",
+          "venue": "CRC Press",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Saloni Khurana",
+          "year": "2017",
+          "title": "Review paper on cyber security",
+          "venue": "Int. J. Eng. Res. Technol. (IJERT)",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Ashwini Sheth, Sachin Bhosale, and Adnan Bukhari",
+          "year": "2021",
+          "title": "A Survey on Cyber Security",
+          "venue": "Contemporary Research in India, Special Issue",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Muqbil",
+          "year": "2023",
+          "title": "Cyber security experts warn massive threat activity against SVB following collapse",
+          "venue": "ETCIO",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Alex Andrew, Sam Spillard, Joshua Collyer, and Neil Dhir",
+          "year": "2022",
+          "title": "Developing optimal causal cyber- defence agents via cyber security simulation",
+          "venue": "arXiv preprint arXiv:2207.12355",
+          "doi": "10.48550/arXiv.2207.12355"
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Shah Md Istiaque, Md Toki Tahmid, Asif Iqbal Khan, Zaber Al Hassan, and Sajjad Waheed",
+          "year": "2021",
+          "title": "State-of-the-Art Artificial Intelligence Based Cyber Defense Model",
+          "venue": "2021 IEEE International Conference on Service Operations and Logistics, and Informatics (SOLI)",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Gautam Srivastava, Rutvij H. Jhaveri, Sweta Bhattacharya, Sharnil Pandya, Praveen Kumar Reddy Maddikunta, Gokul Yenduri, Jon G. Hall, Mamoun Alazab, and Thippa Reddy Gadekallu",
+          "year": "2022",
+          "title": "XAI for cybersecurity: state of the art, challenges, open issues and future directions",
+          "venue": "arXiv preprint arXiv:2206.03585",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "IANS",
+          "year": "2021",
+          "title": "83% organisations in India reported rise in phishing attacks during Covid",
+          "venue": "ETCIO.com From the Economic Times",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Chuyi, Yan, Chen Zhang, Zhigang Lu, Zehui Wang, Yuling Liu, and Baoxu Liu",
+          "year": "2022",
+          "title": "Blockchain abnormal behavior awareness methods: a survey",
+          "venue": "Cybersecurity",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Victor Mayoral-Vilches, Ruffin White, Gianluca Caiazza, and Mikael Arguedas",
+          "year": "2022",
+          "title": "Sros2: Usable cyber security tools for ros 2",
+          "venue": "2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Ricardo M. Czekster, Roberto Metere, and Charles Morisset",
+          "year": "2022",
+          "title": "Incorporating Cyber Threat Intelligence into Complex Cyber-Physical Systems: A STIX Model for Active Buildings",
+          "venue": "Applied Sciences",
+          "doi": "10.3390/app12105005"
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Carsten Maple, Matthew Bradbury, Anh Tuan Le, and Kevin Ghirardello",
+          "year": "2019",
+          "title": "A connected and autonomous vehicle reference architecture for attack surface analysis",
+          "venue": "Applied Sciences",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Rahul K. Vigneswaran, R. Vinayakumar, K. P. Soman, and Prabaharan Poornachandran",
+          "year": "2018",
+          "title": "Evaluating shallow and deep neural networks for network intrusion detection systems in cyber security",
+          "venue": "2018 9th International conference on computing, communication and networking technologies (ICCCNT)",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Yuqi Chen, Bohan Xuan, Christopher M. Poskitt, Jun Sun, and Fan Zhang",
+          "year": "2020",
+          "title": "Active fuzzing for testing and securing cyber-physical systems",
+          "venue": "Proceedings of the 29th ACM SIGSOFT International Symposium on Software Testing and Analysis",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Elhaam Abdulrahman Debas, Razan Sulaiman Alajlan, and MM Hafizur Rahman",
+          "year": "2023",
+          "title": "Biometric in Cyber Security: A Mini Review",
+          "venue": "2023 International Conference on Artificial Intelligence in Information and Communication (ICAIIC)",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Mohammad Kamrul Hasan, AKM Ahasan Habib, Zarina Shukur, Fazil Ibrahim, Shayla Islam, and Md Abdur Razzaque",
+          "year": "2023",
+          "title": "Review on cyber-physical and cyber-security system in smart grid: Standards, protocols, constraints, and recommendations",
+          "venue": "Journal of Network and Computer Applications",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Aušrius Juozapavičius, Agnė Brilingaitė, Linas Bukauskas, and Ricardo Gregorio Lugo",
+          "year": "2022",
+          "title": "Age and gender impact on password hygiene",
+          "venue": "Applied Sciences",
+          "doi": "10.3390/app12020894"
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      }
+    ],
+    "uncertain_citations": [],
+    "hallucinated_citations": [
+      {
+        "citation": {
+          "author_list": null,
+          "year": null,
+          "title": null,
+          "venue": null,
+          "doi": null
+        },
+        "verification_status": "hallucinated",
+        "confidence": 0.0
+      }
+    ],
+    "hallucination_rate_percent": 5.56,
+    "total_citations_generated": 18,
+    "total_verified": 17,
+    "total_hallucinated": 1,
+    "total_uncertain": 0
+  },
+  "sections_extracted": [
+    "approach",
+    "abstract",
+    "introduction",
+    "discussion",
+    "conclusion"
+  ]
+}

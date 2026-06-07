@@ -1,0 +1,192 @@
+{
+  "input_pdf": "temp_20260607_105626.pdf",
+  "timestamp": "20260607_105721",
+  "pipeline_output": {
+    "verified_summary": "This study addresses the limitations of existing collaboration structures in large language models, which can suppress valuable contributions from less dominant agents. To overcome this, a multi-agent framework is proposed, leveraging large language models and optimization methods to improve reasoning capabilities. The framework is applied to various tasks, including math and science reasoning, using publicly available datasets. Experimental results show that the proposed approach, referred to as O PT A GENT, outperforms other methods in downstream reasoning tasks, highlighting the need for task-specific designs. The analysis emphasizes the importance of flexible and adaptive methodologies, rather than relying on crafted prompt strategies. The findings suggest that incorporating external planning modules into multi-agent frameworks could be a promising direction for complex planning tasks. Overall, this research demonstrates the potential of multi-agent frameworks in enhancing the reasoning capabilities of large language models, and underscores the importance of developing more adaptive and collaborative approaches.",
+    "verified_citations": [
+      {
+        "citation": {
+          "author_list": "Maciej Besta, Nils Blach, Ales Kubicek, Robert Ger-stenberger, Michal Podstawski, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann, Hubert Niewiadom-ski, Piotr Nyczyk, and Torsten Hoefler",
+          "year": "2024",
+          "title": "Graph of thoughts: Solving elaborate problems with large language models",
+          "venue": "Thirty-Eighth AAAI Conference on Artificial Intelligence, AAAI 2024",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Zhenyu Bi, Daniel Hajialigol, Zhongkai Sun, Jie Hao, and Xuan Wang",
+          "year": "2024",
+          "title": "Stoc-tot: Stochastic tree-of-thought with constrained decoding for complex reasoning in multi-hop question answering",
+          "venue": "Preprint",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeff Wu, Clemens Winter, and 12 others",
+          "year": "2020",
+          "title": "Language models are few-shot learners",
+          "venue": "ArXiv",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Chi-Min Chan, Weize Chen, Yusheng Su, Jianxuan Yu, Wei Xue, Shan Zhang, Jie Fu, and Zhiyuan Liu",
+          "year": "2023",
+          "title": "Chateval: Towards better llm-based evaluators through multi-agent debate",
+          "venue": "ArXiv",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Guangyao Chen, Siwei Dong, Yu Shu, Ge Zhang, Jaward Sesay, Börje F. Karlsson, Jie Fu, and Yemin Shi",
+          "year": "2023",
+          "title": "Autoagents: A framework for automatic agent generation",
+          "venue": "International Joint Conference on Artificial Intelligence",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Justin Chih-Yao Chen, Swarnadeep Saha, and Mohit Bansal",
+          "year": "2023",
+          "title": "Reconcile: Round-table conference improves reasoning via consensus among diverse llms",
+          "venue": "ArXiv",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Wenhu Chen, Xueguang Ma, Xinyi Wang, and William W. Cohen",
+          "year": "2023",
+          "title": "Program of thoughts prompting: Disentangling computation from rea-soning for numerical reasoning tasks",
+          "venue": "Preprint",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, Christopher Hesse, and John Schulman",
+          "year": "2021",
+          "title": "Training verifiers to solve math word prob-lems",
+          "venue": "ArXiv",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, Anirudh Goyal, Anthony S. Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Ko-renev, Arthur Hinsvark, Arun Rao, Aston Zhang, and 510 others",
+          "year": "2024",
+          "title": "The llama 3 herd of models",
+          "venue": "ArXiv",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul Arora, Steven Basart, Eric Tang, Dawn Xiaodong Song, and Jacob Steinhardt",
+          "year": "2021",
+          "title": "Measuring math-ematical problem solving with the math dataset",
+          "venue": "ArXiv",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Bowen Jin, Chulin Xie, Jiawei Zhang, Kashob Ku-mar Roy, Yu Zhang, Zheng Li, Ruirui Li, Xian-feng Tang, Suhang Wang, Yu Meng, and Jiawei Han",
+          "year": "2024",
+          "title": "Graph chain-of-thought: Augmenting large language models by reasoning on graphs",
+          "venue": "Preprint",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Junyou Li, Qin Zhang, Yangbin Yu, Qiang Fu, and Deheng Ye",
+          "year": "2024",
+          "title": "More agents is all you need",
+          "venue": "Preprint",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Qintong Li, Leyang Cui, Xueliang Zhao, Lingpeng Kong, and Wei Bi",
+          "year": "2024",
+          "title": "Gsm-plus: A compre-hensive benchmark for evaluating the robustness of llms as mathematical problem solvers",
+          "venue": "ArXiv",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Tian Liang, Zhiwei He, Wenxiang Jiao, Xing Wang, Yan Wang, Rui Wang, Yujiu Yang, Shuming Shi, and Zhaopeng Tu",
+          "year": "2024",
+          "title": "Encouraging divergent thinking in large language models through multi-agent debate",
+          "venue": "Preprint",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      },
+      {
+        "citation": {
+          "author_list": "Meng Lu, Brandon Ho, Dennis Ren, and Xuan Wang",
+          "year": "2024",
+          "title": "TriageAgent: Towards better multi-agents collaborations for large language model-based clinical triage",
+          "venue": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+          "doi": null
+        },
+        "verification_status": "verified",
+        "confidence": 0.95
+      }
+    ],
+    "uncertain_citations": [],
+    "hallucinated_citations": [],
+    "hallucination_rate_percent": 0.0,
+    "total_citations_generated": 15,
+    "total_verified": 15,
+    "total_hallucinated": 0,
+    "total_uncertain": 0
+  },
+  "sections_extracted": [
+    "abstract",
+    "approach",
+    "results",
+    "introduction",
+    "methods",
+    "experiments",
+    "discussion",
+    "conclusion",
+    "methodology"
+  ]
+}

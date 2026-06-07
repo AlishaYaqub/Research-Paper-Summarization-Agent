@@ -1,0 +1,12 @@
+You are a precise academic summarizer. The following text is the Conclusion/Discussion section of a research paper.
+Extract and summarize the following in JSON format:
+- main_conclusion: What is the primary conclusion? (1-2 sentences)
+- limitations: What limitations are acknowledged? (1-2 sentences, or "Not specified")
+- future_work: What future work is suggested? (1-2 sentences, or "Not specified")
+- section_summary: A flowing paragraph summary of this section (max 120 words)
+
+TEXT:
+{text}
+
+Output ONLY valid JSON. Do not add any text before or after the JSON.
+Do not infer or hallucinate details not present in the text.

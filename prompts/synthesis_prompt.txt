@@ -1,0 +1,14 @@
+You are an academic writing assistant. You have been provided with structured summaries of each section of a research paper in JSON format.
+Using ONLY the information in these summaries, write a single coherent abstract of approximately 200-250 words that covers:
+1. The core research problem
+2. The proposed solution or methodology
+3. The experimental setup and datasets used
+4. The main quantitative findings
+5. The primary conclusion
+
+Do not introduce any information not present in the provided summaries.
+Do not copy text verbatim from the summaries. Write in your own words.
+Output ONLY the abstract as plain text. No JSON, no headings.
+
+SECTION SUMMARIES:
+{summaries}

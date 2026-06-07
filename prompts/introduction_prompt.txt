@@ -1,0 +1,12 @@
+You are a precise academic summarizer. The following text is the Introduction section of a research paper.
+Extract and summarize the following in JSON format:
+- research_problem: What is the research problem or gap? (1-2 sentences)
+- motivation: Why is this problem important? (1-2 sentences)
+- proposed_contribution: What does this paper contribute? (1-2 sentences)
+- section_summary: A flowing paragraph summary of this section (max 120 words)
+
+TEXT:
+{text}
+
+Output ONLY valid JSON. Do not add any text before or after the JSON.
+Do not infer or hallucinate details not present in the text.
